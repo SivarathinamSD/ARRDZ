@@ -1,0 +1,29 @@
+### Installation  
+Run the following command to install the required dependencies:  
+```
+pip install flask flask-session requests
+```
+
+---
+
+### README  
+
+#### Project Overview  
+This is a Flask web application that uses `Flask-Session` for session management and `requests` for making HTTP requests.
+
+#### Dependencies  
+- Flask  
+- Flask-Session  
+- requests   
+
+#### How to Run  
+1. Install dependencies using:  
+   ```bash
+   pip install flask flask-session requests
+   ```  
+2. Run the Flask application:  
+   ```bash
+   python app.py
+   ```
+3. Open your browser and access `http://127.0.0.1:5000/`
+
