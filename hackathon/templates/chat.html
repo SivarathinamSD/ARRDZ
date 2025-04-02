@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Dashboard</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function updateData() {
+            $.get('/get_data', function(data) {
+                $('#battery-level').text(data.battery_level + '%');
+                $('#position-x').text(data.position.x);
+                $('#position-y').text(data.position.y);
+                $('#accelerometer-x').text(data.accelerometer.x);
+                $('#accelerometer-y').text(data.accelerometer.y);
+                $('#accelerometer-z').text(data.accelerometer.z);
+                $('#status').text(data.communication_status);
+                $('#recharging').text(data.recharging ? 'Yes' : 'No');
+            });
+        }
+
+        $(document).ready(function() {
+            // Update the data every 3 seconds
+            setInterval(updateData, 3000);
+            updateData(); // Initial data load
+        });
+    </script>
+</head>
+<body>
+    <div style="padding: 20px; font-family: Arial, sans-serif;">
+        <h1>Flask Dashboard</h1>
+        <h2>Battery Level: <span id="battery-level">0%</span></h2>
+
+        <h3>Position</h3>
+        <p>X: <span id="position-x">0</span>, Y: <span id="position-y">0</span></p>
+
+        <h3>Accelerometer</h3>
+        <p>X: <span id="accelerometer-x">0</span>, Y: <span id="accelerometer-y">0</span>, Z: <span id="accelerometer-z">0</span></p>
+
+        <h3>Status</h3>
+        <p>Communication: <span id="status">Inactive</span></p>
+        <p>Recharging: <span id="recharging">No</span></p>
+    </div>
+</body>
+</html>
