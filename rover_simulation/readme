@@ -1,1 +1,30 @@
+### Installation  
+Run the following command to install the required dependencies:  
+```bash
+pip install pygame pillow requests
+```
 
+---
+
+### README  
+
+#### Project Overview  
+This project uses:  
+- `pygame` for game development or multimedia processing.  
+- `PIL (Pillow)` for image processing.  
+- `requests` for making HTTP requests.  
+
+#### Dependencies  
+- pygame  
+- pillow (PIL)  
+- requests  
+
+#### How to Run  
+1. Install dependencies using:  
+   ```
+   pip install pygame pillow requests
+   ```  
+2. Run the Python script:  
+   ```
+   python rover1.py
+   ```  
